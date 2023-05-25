@@ -13,3 +13,9 @@
 You can use any tech stack that you feel comfortable with, preferably Python, JavaScript, Java, C# or PHP.
 
 Please don't upload the task or your created solutions anywhere where they can be accessed by the public.
+
+TODO
+
+However, one improvement you could make is to sort the snippets by some criterion (like creation date) before paginating them, to ensure a consistent order across multiple requests.
+
+Also, as previously mentioned, in a production-grade application, you would typically handle filtering and pagination directly in the database query, rather than loading all snippets into memory and then filtering and paginating them. This approach would scale better for large amounts of data.
