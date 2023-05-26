@@ -1,0 +1,7 @@
+desktop.ini
+__pycache__
+.vscode
+.pytest_cache
+decorators.py
+main_test.py
+README - Kopie.md

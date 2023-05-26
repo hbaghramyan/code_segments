@@ -1,15 +1,25 @@
-1. Design and implement a JSON-based RESTful API for creating and sharing code snippets. The API should meet the following requirements:
-    1.1 A code snippet consists of a required text content which is the shared code and the language of that code, which should be a choice from Java, PHP, Python, JavaScript and Plain Text. Optionally it can have a title and an author name (freely chosen).
-    1.2 For every code snippet the time creation should be tracked automatically.
-    1.3 There should be one endpoint supporting the following actions:
-        - Listing existing code snippets. Users of the API can filter by creation date or language, and they can search for keywords in title or content. The results should be paginated. The page size should be 20 by default and 100 at maximum.
-        - Creating new snippets with the data mentioned above. The API should return the JSON representation of the newly created snippet in the body and its unique URL in the headers. Part of the response should be a secret that can be used for deleting the snippet.
-        - Fetching a code snippet by its ID.
-        - Deleting a code snippet by its ID and secret.
-        - Updating a code snippet should yield a new snippet with a new ID and secret, rather than modifying the original one.
-    1.4 The API should allow anonymous access, so anyone can perform any action.
-    1.5 On the other hand, it should allow for private snippets. These should be excluded from list results, so they are only accessible by their direct URLs/IDs.
+## Especificación de la aplicación para compartir código
 
-You can use any tech stack that you feel comfortable with, preferably Python, JavaScript, Java, C# or PHP.
+### Resumen
+Crea un servicio de API utilizando prácticas JSON y RESTful, destinado a la creación, difusión y gestión de segmentos de código. Esta API debe cumplir con la siguiente lista de directrices:
 
-Please don't upload the task or your created solutions anywhere where they can be accessed by the public.
+### Características clave de un segmento de código
+**2.1** La porción de código debe incluir el texto del código y su lenguaje de programación asociado, con las opciones de Java, PHP, Python, JavaScript o texto plano. También existe la oportunidad de proporcionar un título y el nombre del autor, pero estos no son obligatorios.
+
+### Marcado de tiempo
+**2.2** Se debe implementar un registro automático de tiempo para rastrear el inicio de cada segmento de código.
+
+### Puntos finales de la API
+**2.3** La API debe mantener un único punto final que permita las siguientes capacidades:
+
+- **2.3.1** Mostrar todos los segmentos de código. Los usuarios de la API pueden implementar filtros basados en la fecha de creación o el lenguaje y también pueden ejecutar búsquedas de palabras clave dentro del título o el contenido. Es esencial paginar los resultados, con cada página predeterminada a 20 entradas y el límite superior limitado a 100.
+- **2.3.2** Introducción de nuevos segmentos con los datos mencionados anteriormente. La respuesta debe incluir el nuevo segmento de código en formato JSON en el cuerpo y la URL única en los encabezados. También es necesario incluir un secreto confidencial en la respuesta para futuras eliminaciones del segmento.
+- **2.3.3** Recuperar un segmento de código específico utilizando su ID única.
+- **2.3.4** Eliminar un segmento de código específico utilizando su ID única y el secreto correspondiente.
+- **2.3.5** Cualquier actualización de un segmento de código debe resultar en un nuevo segmento con una nueva ID y secreto, en lugar de alterar el segmento existente.
+
+### Accesibilidad
+**2.4** La API debe proporcionar acceso abierto, permitiendo que todas las acciones sean realizadas por cualquiera.
+
+### Privacidad
+**2.5** La API también debe proporcionar una provisión para segmentos de código privados. Dichos segmentos deben omitirse de cualquier resultado basado en listas, haciéndolos solo accesibles a través de su URL o ID única.
