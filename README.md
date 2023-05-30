@@ -1,25 +1,25 @@
-## Especificación de la aplicación para compartir código
+## Code Share Application Specification
 
-### Resumen
-Crea un servicio de API utilizando prácticas JSON y RESTful, destinado a la creación, difusión y gestión de segmentos de código. Esta API debe cumplir con la siguiente lista de directrices:
+### Overview
+Create an API service utilizing JSON and RESTful practices, purposed for the creation, dissemination, and management of code segments. This API should conform to the ensuing list of guidelines:
 
-### Características clave de un segmento de código
-**2.1** La porción de código debe incluir el texto del código y su lenguaje de programación asociado, con las opciones de Java, PHP, Python, JavaScript o texto plano. También existe la oportunidad de proporcionar un título y el nombre del autor, pero estos no son obligatorios.
+### Key Characteristics of a Code Segment
+**2.1** The code portion has to include the code text and its associated programming language, with the options being Java, PHP, Python, JavaScript or Plain Text. There is also an opportunity to provide a title and author name but these are not mandatory.
 
-### Marcado de tiempo
-**2.2** Se debe implementar un registro automático de tiempo para rastrear el inicio de cada segmento de código.
+### Timestamping
+**2.2** Automatic timestamping should be in place to track the inception of each code segment.
 
-### Puntos finales de la API
-**2.3** La API debe mantener un único punto final que permita las siguientes capacidades:
+### API Endpoints
+**2.3** The API should maintain a single endpoint that enables the following capabilities:
 
-- **2.3.1** Mostrar todos los segmentos de código. Los usuarios de la API pueden implementar filtros basados en la fecha de creación o el lenguaje y también pueden ejecutar búsquedas de palabras clave dentro del título o el contenido. Es esencial paginar los resultados, con cada página predeterminada a 20 entradas y el límite superior limitado a 100.
-- **2.3.2** Introducción de nuevos segmentos con los datos mencionados anteriormente. La respuesta debe incluir el nuevo segmento de código en formato JSON en el cuerpo y la URL única en los encabezados. También es necesario incluir un secreto confidencial en la respuesta para futuras eliminaciones del segmento.
-- **2.3.3** Recuperar un segmento de código específico utilizando su ID única.
-- **2.3.4** Eliminar un segmento de código específico utilizando su ID única y el secreto correspondiente.
-- **2.3.5** Cualquier actualización de un segmento de código debe resultar en un nuevo segmento con una nueva ID y secreto, en lugar de alterar el segmento existente.
+- **2.3.1** Showcasing all the code segments. The API users can implement filters based on creation date or language and can also execute keyword searches within the title or content. It is essential to paginate the results, with each page defaulting to 20 entries and the upper limit capped at 100.
+- **2.3.2** Introduction of new segments with the previously stated data. The response should include the JSON formatted new code segment in the body and the unique URL in the headers. Inclusion of a confidential secret in the response is also necessary for future deletion of the segment.
+- **2.3.3** Retrieve a specific code segment using its unique ID.
+- **2.3.4** Delete a particular code segment utilizing its unique ID and corresponding secret.
+- **2.3.5** Any updates to a code segment should result in a fresh segment with a new ID and secret, instead of altering the existing segment.
 
-### Accesibilidad
-**2.4** La API debe proporcionar acceso abierto, permitiendo que todas las acciones sean realizadas por cualquiera.
+### Accessibility
+**2.4** The API should provide open access, permitting all actions to be carried out by anyone.
 
-### Privacidad
-**2.5** La API también debe proporcionar una provisión para segmentos de código privados. Dichos segmentos deben omitirse de cualquier resultado basado en listas, haciéndolos solo accesibles a través de su URL o ID única.
+### Privacy
+**2.5** The API should also provide a provision for private code segments. Such segments should be omitted from any list-based results, making them only reachable through their unique URL or ID.
